@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "91f11a4a-c6cf-4e8e-8f03-37367937371f",
+		"name": "TistechApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getToken",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "user",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/user",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAvailabilities",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoiYWRtaW4iLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjU2NDY2MzcxLCJleHAiOjE2NTY0NjY5NzF9.sdvdNEfRhZuUOpen2TqLyhw2Bkwg_wAnv9CEZpJFR6i0WNcSeUoylX4U8qtOfQhHkFCPnoSwd-dAupNp9arbew",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/availabilities",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"availabilities"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
