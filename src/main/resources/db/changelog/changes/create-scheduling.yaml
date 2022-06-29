@@ -1,0 +1,51 @@
+databaseChangeLog:
+  - changeSet:
+      id: "5"
+      author: José Humberto Fróes
+      changes:
+      - createTable:
+          tableName: scheduling
+          columns:
+          - column:
+              name: id
+              type: bigint
+              autoIncrement: true
+              constraints:
+                primaryKey: true
+                nullable: false
+          - column:
+              name: id_candidate
+              type: bigint
+              constraints:
+                nullable: false
+          - column:
+              name: id_exam
+              type: bigint
+              constraints:
+                nullable: false
+          - column:
+              name: id_availability
+              type: bigint
+              constraints:
+                nullable: false
+          - column:
+              name: description
+              type: varchar(100)
+      - addForeignKeyConstraint:
+           baseColumnNames: id_candidate
+           baseTableName: scheduling
+           constraintName: fk_id_candidate_scheduling
+           referencedColumnNames: id
+           referencedTableName: candidate
+      - addForeignKeyConstraint:
+           baseColumnNames: id_exam
+           baseTableName: scheduling
+           constraintName: fk_id_exam_scheduling
+           referencedColumnNames: id
+           referencedTableName: exam
+      - addForeignKeyConstraint:
+           baseColumnNames: id_availability
+           baseTableName: scheduling
+           constraintName: fk_id_availability_scheduling
+           referencedColumnNames: id
+           referencedTableName: availability

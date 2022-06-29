@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: "4"
+      author: José Humberto Fróes
+      changes:
+      - createTable:
+          tableName: availability
+          columns:
+          - column:
+              name: id
+              type: bigint
+              autoIncrement: true
+              constraints:
+                primaryKey: true
+                nullable: false
+          - column:
+              name: id_room
+              type: bigint
+          - column:
+              name: data
+              type: date
+          - column:
+              name: description
+              type: varchar(100)
+      - addForeignKeyConstraint:
+           baseColumnNames: id_room
+           baseTableName: availability
+           constraintName: fk_id_room_availability
+           referencedColumnNames: id
+           referencedTableName: room

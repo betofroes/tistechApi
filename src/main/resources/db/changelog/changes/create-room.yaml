@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: "3"
+      author: José Humberto Fróes
+      changes:
+      - createTable:
+          tableName: room
+          columns:
+          - column:
+              name: id
+              type: bigint
+              autoIncrement: true
+              constraints:
+                primaryKey: true
+                nullable: false
+          - column:
+              name: code
+              type: bigint
+          - column:
+              name: description
+              type: varchar(100)
